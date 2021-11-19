@@ -1,9 +1,9 @@
 <template>
     <header>
-         {{  title  }}
+       <h2>  {{  title  }} </h2>
     </header>
      <Button text = "add" color = blue />
-     <Button text = "delete" color = red />
+     
 </template>
 
 <script>
@@ -21,10 +21,16 @@ export default {
 </script>
 
 <style scoped>
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
+
+.h2 {
+   align-items: center;
+}
+
 </style>
