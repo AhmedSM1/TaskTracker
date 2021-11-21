@@ -2,7 +2,7 @@
     <header>
        <h2>  {{  title  }} </h2>
     </header>
-     <Button text = "add" color = blue />
+     <Button @show-form="$emit('show-form')" text = "add" color = blue />
      
 </template>
 
