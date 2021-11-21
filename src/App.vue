@@ -1,6 +1,9 @@
 <template>
 <div class="container">
-   <Header title = "Task tracker" @show-form="setShowAddTask" />
+   <Header title = "Task tracker" 
+           :showAddTask="showAddTask" 
+           @show-form="setShowAddTask"
+  />
    <div v-show="showAddTask">
       <AddTask @addTask = "addTask"/>
      </div>

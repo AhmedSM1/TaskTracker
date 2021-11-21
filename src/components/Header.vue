@@ -1,9 +1,11 @@
 <template>
     <header>
        <h2>  {{  title  }} </h2>
-    </header>
-     <Button @show-form="$emit('show-form')" text = "add" color = blue />
-     
+
+     <Button @show-form="$emit('show-form')"
+      :text="showAddTask ? 'Close' : 'Add task' "  
+      :color="showAddTask ? 'red' : 'green' " />
+ </header>
 </template>
 
 <script>
@@ -11,7 +13,8 @@ import Button from "./Button.vue"
 export default {
   name: "Header",
   props: {
-      "title": String
+      title: String,
+      showAddTask: Boolean
   },
   components: {
       Button,
