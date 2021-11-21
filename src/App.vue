@@ -67,7 +67,7 @@ methods: {
       "day": newTask.day,
       "reminder": newTask.reminder
      })
-     this.showAddTask = false
+ 
   },
   toggleReminder(id){
     this.tasks = this.tasks.map((task) => 
@@ -75,7 +75,7 @@ methods: {
     )
   },
   setShowAddTask(){
-    this.showAddTask = true
+    this.showAddTask = !this.showAddTask
   }
 
 
