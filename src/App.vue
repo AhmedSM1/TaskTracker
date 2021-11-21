@@ -3,6 +3,7 @@
    <Header title = "Task tracker" />
    <Tasks 
    @delete-task="deleteTask"
+   @toggle-reminder="toggleReminder"
    :tasks="tasks" />
 </div>
 
@@ -29,7 +30,7 @@ export default {
       "id": "1",
       "text": "Doctors Appointment",
       "day": "March 5th at 2:30pm",
-      "reminder": false
+      "reminder": true
     },
     {
       "id": "2",
@@ -47,8 +48,27 @@ export default {
 },
 methods: {
   deleteTask(id){
-    this.tasks = this.tasks.filter( (task) => task.id !== id);
-  }
+     if(confirm("Are you sure ? ")){
+       this.tasks = this.tasks.filter( (task) => task.id !== id);
+     }
+  },
+
+  addTask(id,text,day, reminder){
+     this.tasks.push({
+      "id": id,
+      "text": text,
+      "day": day,
+      "reminder": reminder
+     })
+  },
+  toggleReminder(id){
+    this.tasks = this.tasks.map((task) => 
+      task.id === id ? { ...task , reminder: !task.reminder} : task
+    )
+  },
+
+
+
 }
 
 }
